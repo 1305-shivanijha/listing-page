@@ -3,119 +3,202 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.dropbtn {
-  background-color: #41c3d5;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  display:block;
-  margin:auto;
-  float:center;
-  text-align:center;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3167B1;
-}
-
-#myInput {
+* {
   box-sizing: border-box;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
 }
 
-#myInput:focus {outline: 3px solid #ddd;}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
 }
 
-.dropdown-content {
+.main {
+  max-width: 1000px;
+  margin: auto;
+  
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  float: left;
+  width: 28%;
   display: none;
-  position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
+  
+  margin:20px;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+.show {
   display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #41c3d5;
+  cursor: pointer;
+  color:white;
+  margin:5px;
+}
 
-.show {display: block;}
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color:#3068b2;
+  color: white;
+}
 </style>
 </head>
 <body>
 
+<div class="main">
+<img src="https://www.mymedisage.com/storage/images/medisage-logo.png" width="150px">
 
+<hr>
 
-<div class="dropdown" style="display:block;margin:auto;">
-  <button onclick="myFunction()" class="dropbtn">SELECT</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="#about">WATCHED</a>
-    <a href="#base">UPCOMING</a>
-    <a href="#blog">UNWATCHED</a>
-    <a href="#contact">VIEWED</a>
-    <a href="#custom">SAVED</a>
-   
+<h2>WEBINARS</h2>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> SHOW ALL</button>
+  <button class="btn" onclick="filterSelection('upcoming')"> UPCOMING WEBINARS</button>
+  <button class="btn" onclick="filterSelection('watched')">WATCHED WEBINARS</button>
+  <button class="btn" onclick="filterSelection('continue')">CONTINUE WATCHING</button>
+</div>
+
+<div class="row">
+  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+      <img src="https://www.mymedisage.com/storage/images/live_event_banner_image/MOGS-registration-image-923x1000-new.png" alt="" style="width:100%">
+    <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+  
+  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+    <img src="https://www.mymedisage.com/storage/images/live_event_banner_image/MOGS-registration-image-923x1000-new.png" alt="" style="width:100%">
+     <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+    <img src="https://www.mymedisage.com/storage/images/live_event_banner_image/MOGS-registration-image-923x1000-new.png" alt="" style="width:100%">
+   <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+  
+  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+      <img src="https://dev2.mymedisage.com/storage/images/video/P&G-Thumbnails-2_(1).jpg" alt="" style="width:100%">
+     <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+    <img src="https://dev2.mymedisage.com/storage/images/video/P&G-Thumbnails-1_(1).jpg" alt="" style="width:100%">
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+    <img src="https://dev2.mymedisage.com/storage/images/video/P&G-Thumbnails-1_(1).jpg" alt="" style="width:100%">
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+
+  <div class="column continue"  style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+      <img src="https://dev2.mymedisage.com/storage/images/series/BAKRIS-ALL-VIDEO_new.jpg" alt="" style="width:100%">
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+  <div class="column continue" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+    <img src="https://dev2.mymedisage.com/storage/images/video/_The_next_generation_of_insulin,_Glargine_U300.png" alt="" style="width:100%">
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
+  </div>
+  <div class="column continue" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <div class="content">
+    <img src="https://dev2.mymedisage.com/storage/images/video/_METFORMIN_META-ANALYSIS-3.png" alt="" style="width:100%">
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    </div>
   </div>
 </div>
 
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+</div>
 
-function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
-</script>
-<div class="container">
-<img src="https://dev2.mymedisage.com/storage/images/newsletter/Website-thambnil-optionss-02.jpg" alt="" style="display:block;margin:auto;">
-<br>
-<br>
-<img src="https://dev2.mymedisage.com/storage/images/newsletter/Website-thambnil-optionss-02.jpg" alt="" style="display:block;margin:auto;">
 
-<br>
-<br>
-<img src="https://dev2.mymedisage.com/storage/images/newsletter/Website-thambnil-optionss-02.jpg" alt="" style="display:block;margin:auto;">
-<br>
-<br>
-<img src="https://dev2.mymedisage.com/storage/images/newsletter/Website-thambnil-optionss-02.jpg" alt="" style="display:block;margin:auto;">
-<br>
-<br>
-<img src="https://dev2.mymedisage.com/storage/images/newsletter/Website-thambnil-optionss-02.jpg" alt="" style="display:block;margin:auto;">
-</div>
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
 </body>
 </html>
-
