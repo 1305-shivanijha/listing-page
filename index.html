@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 * {
   box-sizing: border-box;
@@ -57,13 +58,17 @@ h1 {
 }
 
 .btn {
-  border: none;
+border:none;
   outline: none;
   padding: 12px 16px;
-  background-color: #41c3d5;
+  background-color:white ;
   cursor: pointer;
-  color:white;
+  color:black;
   margin:5px;
+  border-right-style: solid;
+    border-width: 1px;
+
+  
 }
 
 .btn:hover {
@@ -73,81 +78,115 @@ h1 {
 .btn.active {
   background-color:#3068b2;
   color: white;
+
+}
+@media only screen and (max-width: 600px) {
+  .btn{
+    border-right-style: solid;
+    border-width: 0px;
+
+  }
 }
 </style>
 </head>
 <body>
 
-<div class="main">
-<img src="https://www.mymedisage.com/storage/images/medisage-logo.png" width="150px">
 
-<hr>
 
-<h2>WEBINARS</h2>
+<div id="myBtnContainer" style="width:100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);text-align:center;">
+  <button class="btn active" onclick="filterSelection('all')" style="  border-right-style: solid;
+" > SHOW ALL <v1></button>
+  
 
-<div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> SHOW ALL</button>
-  <button class="btn" onclick="filterSelection('upcoming')"> UPCOMING WEBINARS</button>
-  <button class="btn" onclick="filterSelection('watched')">WATCHED WEBINARS</button>
-  <button class="btn" onclick="filterSelection('continue')">CONTINUE WATCHING</button>
+  <button class="btn" onclick="filterSelection('upcoming')"><i class="fa fa-calendar" style="font-size:24px"></i>
+
+ UPCOMING WEBINARS</button>
+ 
+
+  <button class="btn" onclick="filterSelection('watched')"><i class="fa fa-check-circle" style="font-size:24px"></i>
+WATCHED WEBINARS</button>
+  
+
+  <button class="btn" onclick="filterSelection('continue')"> <i class="fa fa-video-camera" style="font-size:24px"></i>
+</i>
+CONTINUE WATCHING</button>
 </div>
-
+<div class="main">
 <div class="row">
-  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
       <img src="https://www.mymedisage.com/storage/images/live_event_banner_image/MOGS-registration-image-923x1000-new.png" alt="" style="width:100%">
-    <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+    <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
   
-  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
     <img src="https://www.mymedisage.com/storage/images/live_event_banner_image/MOGS-registration-image-923x1000-new.png" alt="" style="width:100%">
-     <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+     <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
-  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
     <img src="https://www.mymedisage.com/storage/images/live_event_banner_image/MOGS-registration-image-923x1000-new.png" alt="" style="width:100%">
-   <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+   <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
   
-  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
       <img src="https://dev2.mymedisage.com/storage/images/video/P&G-Thumbnails-2_(1).jpg" alt="" style="width:100%">
-     <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+     <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
-  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
     <img src="https://dev2.mymedisage.com/storage/images/video/P&G-Thumbnails-1_(1).jpg" alt="" style="width:100%">
-      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
-  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column watched" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
     <img src="https://dev2.mymedisage.com/storage/images/video/P&G-Thumbnails-1_(1).jpg" alt="" style="width:100%">
-      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
 
-  <div class="column continue"  style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column continue"  style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
       <img src="https://dev2.mymedisage.com/storage/images/series/BAKRIS-ALL-VIDEO_new.jpg" alt="" style="width:100%">
-      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
-  <div class="column continue" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column continue" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
     <img src="https://dev2.mymedisage.com/storage/images/video/_The_next_generation_of_insulin,_Glargine_U300.png" alt="" style="width:100%">
-      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
-  <div class="column continue" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+  <div class="column continue" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
+">
     <div class="content">
     <img src="https://dev2.mymedisage.com/storage/images/video/_METFORMIN_META-ANALYSIS-3.png" alt="" style="width:100%">
-      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;">READ MORE </BUTTON>
+      <button style="background-color:#3167B1;color:white;border:none;padding:5px;font-size:12px;border-radius:5px;
+">READ MORE </BUTTON>
     </div>
   </div>
 </div>
