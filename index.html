@@ -3,7 +3,55 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
+.light-grey, .hover-light-grey:hover, .light-gray, .hover-light-gray:hover {
+    color: white!important;
+    background-color: #41c3d5!important;
+}
+.sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: #fff;
+    position: fixed!important;
+    z-index: 1;
+    overflow: auto;
+}
+  
+.bar-block .bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+}
+.btn, .button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn, .button {
+
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -93,8 +141,29 @@ border:none;
 
 
 
+
+<div class="sidebar light-grey bar-block" style="width:25%;right:0;">
+  <h3 class="bar-item">Latest Updates</h3>
+  <a href="#" class="bar-item button">Live Webinar on Controversies in Endourology By Prof. Stuart Wolf Jr, Dr. Vineet Gauhar... on 31st October, 06:30 PM.</a>
+  <br>
+  <br>
+  <a href="#" class="bar-item button">Live debate on LDL the Best Predictor: Yes vs NO By Dr. S V Madhu, Dr. Shailaja Kale... on 30th October, 07:00 PM.</a>
+  <br>
+  <br>
+  <a href="#" class="bar-item button">Live debate on LDL the Best Predictor: Yes vs NO By Dr. S V Madhu, Dr. Shailaja Kale... on 30th October, 07:00 PM.</a>
+</div>
+
+
+
+
+
+
+
+
+
+
 <div id="myBtnContainer" style="width:100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);text-align:center;">
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:25%;width:75%;text-align:center;">
   <button class="btn active" onclick="filterSelection('all')" style="  border-right-style: solid;
 " > SHOW ALL <v1></button>
   
@@ -112,7 +181,7 @@ WATCHED WEBINARS</button>
 </i>
 CONTINUE WATCHING</button>
 </div>
-<div class="main">
+<div class="main" style="margin-right:25%">
 <div class="row">
   <div class="column upcoming" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);border-radius:5px;
 ">
